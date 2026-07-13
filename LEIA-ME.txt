@@ -154,4 +154,7 @@ Nenhum arquivo original foi alterado, então isso restaura 100% o jogo.
 - Tradução distribuída gratuitamente. Não venda. O jogo original é
   necessário (compre na Steam).
 
-Versão do pacote: 1.0 (2026-07-13) — inclui instalador automático para Windows
+Versão do pacote: 1.1 (2026-07-13) — inclui instalador automático para
+Windows; corrigidos erros de texto em telas de menu (rótulo "Áudio"
+que aparecia cortado como "udio"; rótulo "Vsync" que aparecia
+corrompido nas opções de vídeo).
