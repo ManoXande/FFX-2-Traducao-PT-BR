@@ -287,13 +287,9 @@ code,
   background: oklch(0.26 0.055 215 / 0.5);
 }
 
-@media (max-width: 720px) {
-  .marca {
-    display: none;
-  }
-  .topo {
-    justify-content: center;
-  }
+.topo__baixar {
+  font-size: 0.92rem;
+  padding: 0.6em 1.3em;
 }
 
 /* ---------- hero ---------- */
@@ -716,7 +712,7 @@ code,
 .reqs {
   list-style: none;
   padding: 0;
-  margin: 1.5rem 0 2rem;
+  margin: 0;
   display: grid;
   gap: 0.6rem;
 }
@@ -733,6 +729,52 @@ code,
   left: 0;
   color: var(--dourado);
   font-weight: 700;
+}
+
+.precisa {
+  margin: 1.5rem 0 2rem;
+  max-width: 44rem;
+}
+
+.precisa__titulo {
+  font-weight: 600;
+  color: var(--espuma);
+  margin: 0 0 0.7rem;
+}
+
+.baixar {
+  display: grid;
+  gap: 1.6rem;
+  margin: 0.5rem 0 0.5rem;
+}
+
+.baixar__destaque {
+  background: oklch(0.24 0.06 90 / 0.16);
+  border: 1px solid oklch(0.80 0.13 80 / 0.4);
+  border-radius: var(--raio);
+  padding: clamp(1.3rem, 3vw, 1.9rem);
+}
+
+.baixar__tag {
+  display: inline-block;
+  font-family: var(--f-corpo);
+  font-weight: 700;
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--dourado);
+  margin-bottom: 0.9rem;
+}
+
+.baixar__alt {
+  padding-left: 0.1rem;
+}
+
+.baixar__ajuda {
+  margin: 0.8rem 0 0;
+  color: var(--nevoa);
+  font-size: 0.92rem;
+  max-width: 42ch;
 }
 
 .download .nota {
@@ -847,6 +889,45 @@ code,
 .copiar:hover {
   color: var(--dourado);
   border-color: var(--dourado);
+}
+
+.manual {
+  margin-top: 1rem;
+  border: var(--borda);
+  border-radius: var(--raio);
+  background: var(--oceano);
+  padding: 0 clamp(1rem, 3vw, 1.6rem);
+}
+
+.manual > summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 1.1rem 0;
+  font-weight: 600;
+  color: var(--nevoa);
+  font-size: 0.98rem;
+}
+
+.manual > summary::-webkit-details-marker {
+  display: none;
+}
+
+.manual > summary::before {
+  content: "+ ";
+  color: var(--dourado);
+  font-family: var(--f-display);
+}
+
+.manual[open] > summary::before {
+  content: "\2013 ";
+}
+
+.manual[open] > summary {
+  color: var(--espuma);
+}
+
+.manual .passos {
+  padding-bottom: 1.2rem;
 }
 
 .confere {
