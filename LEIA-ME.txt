@@ -1,160 +1,188 @@
 ================================================================
-  FINAL FANTASY X-2 HD REMASTER — TRADUÇÃO PT-BR (não oficial)
+  FINAL FANTASY X-2 HD REMASTER — TRADUÇÃO PT-BR (NÃO OFICIAL)
   Para PC (Windows) e Steam Deck / Linux (Proton)
 ================================================================
+
+AVISO IMPORTANTE
+----------------
+Este é um projeto gratuito, não comercial e criado por fãs. Não possui
+vínculo, autorização, patrocínio ou endosso da Square Enix.
+
+FINAL FANTASY X-2, seus personagens, textos, imagens e marcas pertencem
+aos respectivos titulares. Este pacote não inclui o jogo e exige uma
+cópia legítima e atualizada de FINAL FANTASY X/X-2 HD Remaster na Steam.
 
 O QUE É ISTO
 ------------
 Tradução em português do Brasil do FINAL FANTASY X-2 HD Remaster
-(versão Steam, jogo "FINAL FANTASY X/X-2 HD Remaster").
+(versão Steam).
 
-O X-2 nunca tinha sido traduzido porque o jogo tem uma proteção de
-integridade: qualquer modificação no arquivo FFX2_Data.vbf faz o
-launcher abortar com "Broken game data". Esta tradução contorna isso
-usando o "External File Loader" (mod de ffgriever, Nexus Mods nº 150),
-que carrega os arquivos traduzidos de uma pasta separada (data/mods)
-SEM tocar nos arquivos originais do jogo.
+O jogo verifica a integridade de seus arquivos originais. Por isso, o
+pacote não substitui o arquivo FFX2_Data.vbf. Ele utiliza o External File
+Loader, ferramenta criada por ffgriever e publicada no Nexus Mods, para
+carregar arquivos adicionais de uma pasta separada:
+
+    data/mods
+
+O pacote adiciona o loader, seus arquivos de configuração e os conteúdos
+traduzidos. Nenhum arquivo original da Steam deve ser substituído durante
+a instalação correta.
 
 O QUE ESTÁ TRADUZIDO
 --------------------
-- Todo o roteiro/diálogos dos eventos (~35 mil strings)
-- Falas e popups de batalha, tutoriais de batalha
-- Menus, descrições de itens/habilidades/acessórios, Grade de Vestes
+- Todo o roteiro e os diálogos dos eventos (cerca de 35 mil falas)
+- Falas, popups e tutoriais de batalha
+- Menus e descrições de itens, habilidades, acessórios e Grade de Vestes
 - Bestiário (descrições do Scan)
-- Telas de sistema do remaster (autosave, save/load, configurações)
-- DLC "Last Mission"
-- Fonte corrigida para exibir ã e õ nos diálogos
+- Telas de sistema do remaster (autosave, save/load e configurações)
+- DLC Last Mission
+- Fonte ajustada para exibir ã e õ nos diálogos
 
-O que fica em inglês (proposital, seguindo o padrão da tradução do
-FFX-1 da Central de Traduções):
-- Nomes de itens, habilidades e locais (ex.: Potion, Garment Grid)
-- Os rótulos do MENU PRINCIPAL (aberto com Y/Triângulo: Item, Ability,
-  Equip...) — ficam em arquivos Flash do jogo, ainda não editáveis.
-  As DESCRIÇÕES dentro do menu já estão em português.
-- Observação: nas telas de boot/configuração, "ã/õ" aparecem como
-  "ä/ö" (limitação da fonte dessas telas; nos diálogos o til é real).
+O que permanece em inglês:
+- Nomes de itens, habilidades e lugares, como Potion e Garment Grid
+- Rótulos do menu principal, como Item, Ability e Equip
+- Em algumas telas de boot/configuração, ã e õ podem aparecer como ä e ö
+
+================================================================
+  DOWNLOAD E VERIFICAÇÃO
+================================================================
+Baixe o instalador ou o pacote manual somente pela página oficial de
+Releases do projeto:
+
+    https://github.com/ManoXande/FFX-2-Traducao-PT-BR/releases
+
+Antes de executar:
+1. Confira o nome e o tamanho do arquivo.
+2. Compare o hash SHA-256 com o valor publicado na Release.
+3. Não use cópias reenviadas por terceiros.
+4. Faça backup dos seus saves antes de instalar qualquer mod.
+
+O instalador do Windows ainda não possui assinatura digital e, por isso,
+o Windows pode exibir um aviso do SmartScreen. Não prossiga antes de
+confirmar que o arquivo veio da Release oficial e que o hash corresponde.
 
 ================================================================
   INSTALAÇÃO — WINDOWS (PC)
 ================================================================
-1. Baixe e execute o instalador: FFX2-Traducao-PTBR-Setup.exe
+1. Baixe o instalador FFX2-Traducao-PTBR-Setup.exe pela Release oficial.
 
-2. Siga as telas do assistente. O instalador encontra sozinho a pasta
-   do jogo na Steam. Se não encontrar, ele pede para você escolher
-   a pasta manualmente.
+2. Confira o hash SHA-256 publicado na mesma Release.
 
-3. Pronto. Abra o jogo normalmente pela Steam e escolha FFX-2.
+3. Execute o instalador e siga o assistente. Ele tenta localizar a pasta
+   do jogo na Steam. Se não encontrar, selecione a pasta manualmente.
+
+4. Abra o jogo normalmente pela Steam e escolha FFX-2.
 
 ================================================================
-  INSTALAÇÃO MANUAL (alternativa — Windows)
+  INSTALAÇÃO MANUAL — WINDOWS
 ================================================================
-Para quem preferir instalar sem o instalador, ou se o instalador não
-estiver disponível no pacote que você baixou:
-
 1. Localize a pasta do jogo:
-   Steam > clique com o botão direito em "FINAL FANTASY X/X-2 HD
-   Remaster" > Gerenciar > Procurar arquivos locais.
-   (Normalmente: C:\Program Files (x86)\Steam\steamapps\common\
-    FINAL FANTASY FFX&FFX-2 HD Remaster)
+   Steam > clique com o botão direito em FINAL FANTASY X/X-2 HD Remaster
+   > Gerenciar > Procurar arquivos locais.
 
-2. Copie TODO o CONTEÚDO da pasta "arquivos-do-jogo" (deste pacote)
-   para DENTRO da pasta do jogo. Devem ficar na raiz do jogo, ao lado
-   de FFX-2.exe:
+   Caminho comum:
+   C:\Program Files (x86)\Steam\steamapps\common\
+   FINAL FANTASY FFX&FFX-2 HD Remaster
+
+2. Extraia o pacote manual e copie o conteúdo da pasta
+   "arquivos-do-jogo" para a pasta do jogo, ao lado de FFX-2.exe.
+
+   Serão adicionados:
       dinput8.dll
       simpleLog.dll
       hook.ini
-      modules\  (pasta)
-      data\mods\  (a pasta "data" já existe no jogo — apenas mescle;
-                   nenhum arquivo original é substituído)
+      modules\
+      data\mods\
 
-3. Pronto. Abra o jogo normalmente pela Steam e escolha FFX-2.
+3. Abra o jogo normalmente pela Steam e escolha FFX-2.
 
 ================================================================
-  INSTALAÇÃO — STEAM DECK / LINUX (Proton)
+  INSTALAÇÃO — STEAM DECK / LINUX (PROTON)
 ================================================================
-O instalador automático (FFX2-Traducao-PTBR-Setup.exe) é só para
-Windows — no Steam Deck e no Linux a instalação continua manual.
-
 1. No Modo Desktop, localize a pasta do jogo:
-   ~/.local/share/Steam/steamapps/common/FINAL FANTASY FFX&FFX-2 HD Remaster
-   (se o jogo estiver no cartão SD:
-   /run/media/mmcblk0p1/steamapps/common/FINAL FANTASY FFX&FFX-2 HD Remaster)
 
-2. Copie TODO o CONTEÚDO da pasta "arquivos-do-jogo" para dentro da
-   pasta do jogo (mesma coisa do passo 2 da instalação manual).
+   ~/.local/share/Steam/steamapps/common/
+   FINAL FANTASY FFX&FFX-2 HD Remaster
 
-3. PASSO EXTRA (obrigatório no Proton): o Wine precisa ser autorizado
-   a carregar a dinput8.dll do loader. Na Steam:
-   - Botão direito no jogo > Propriedades > Geral > Opções de Inicialização
-   - Cole exatamente:
+   Se estiver no cartão SD, o caminho pode começar por:
+   /run/media/mmcblk0p1/steamapps/common/
 
-     WINEDLLOVERRIDES="dinput8=n,b" %command%
+2. Copie o conteúdo da pasta "arquivos-do-jogo" para a pasta do jogo.
 
-   (Se já houver algo nas opções de inicialização, adicione
-   WINEDLLOVERRIDES="dinput8=n,b" antes do %command% existente.)
+3. Nas opções de inicialização da Steam, adicione:
+
+   WINEDLLOVERRIDES="dinput8=n,b" %command%
+
+   Se já houver outro comando, preserve-o e mantenha o
+   WINEDLLOVERRIDES antes do %command%.
 
 4. Abra o jogo pela Steam e escolha FFX-2.
 
 ================================================================
   COMO CONFERIR SE FUNCIONOU
 ================================================================
-- O jogo deve passar do launcher SEM a mensagem "Broken game data".
-- Um arquivo "hook.log" aparece na pasta do jogo após abrir (é o log
-  do loader — sinal de que ele carregou).
-- Menus, diálogos e batalhas em português.
+- O jogo deve iniciar sem a mensagem "Broken game data".
+- Um arquivo hook.log deve aparecer na pasta do jogo.
+- Diálogos, descrições e outros conteúdos traduzidos devem aparecer.
 
-Se aparecer "Broken game data": você substituiu algum arquivo original
-por engano. Verifique a integridade dos arquivos pela Steam
-(Propriedades > Arquivos Instalados > Verificar integridade) e refaça
-a instalação — este pacote NÃO substitui nenhum arquivo original.
+Se aparecer "Broken game data":
+- Verifique a integridade dos arquivos pela Steam.
+- Não substitua manualmente o arquivo FFX2_Data.vbf.
+- Refaça a instalação usando somente o pacote oficial.
 
 Se o jogo abrir em inglês:
-- Windows: confira se dinput8.dll está na MESMA pasta do FFX-2.exe
-  (e não dentro de uma subpasta "arquivos-do-jogo").
-- Steam Deck: confira o passo 3 (WINEDLLOVERRIDES). Sem ele o Wine
-  ignora a dinput8.dll do loader.
-- Confira se existe data\mods\ffx-2_data\... dentro da pasta do jogo.
+- Windows: confira se dinput8.dll está na mesma pasta do FFX-2.exe.
+- Steam Deck/Linux: confira o WINEDLLOVERRIDES.
+- Confira se existe data\mods\ffx-2_data dentro da pasta do jogo.
 
 ================================================================
   DESINSTALAÇÃO
 ================================================================
-Windows (se instalou pelo instalador):
+Windows, se instalou pelo instalador:
    Configurações > Aplicativos > Aplicativos instalados >
    Tradução PT-BR - FINAL FANTASY X-2 HD Remaster > Desinstalar
-   (também funciona em Painel de Controle > Programas e Recursos)
 
-Instalação manual (alternativa — Windows e Steam Deck / Linux):
-   Apague (ou renomeie) na pasta do jogo:
-      dinput8.dll, simpleLog.dll, hook.ini, hook.log, a pasta modules\
-      e a pasta data\mods\
-   No Steam Deck, remova também a opção de inicialização.
+Instalação manual:
+   Apague da pasta do jogo:
+      dinput8.dll
+      simpleLog.dll
+      hook.ini
+      hook.log
+      modules\
+      data\mods\
 
-Nenhum arquivo original foi alterado, então isso restaura 100% o jogo.
+No Steam Deck/Linux, remova também a opção de inicialização.
 
-================================================================
-  AVISOS E COMPATIBILIDADE
-================================================================
-- NUNCA modifique o FFX2_Data.vbf — a proteção do jogo detecta e
-  bloqueia. Esta tradução não toca nele.
-- O FFX (jogo 1) da mesma coletânea NÃO é afetado (a tradução só
-  contém arquivos do X-2). Para o FFX-1 em PT-BR, use o patch da
-  Central de Traduções.
-- Mods gráficos que usam dinput8.dll (ex.: alguns injetores) conflitam
-  com o loader. Mods via dxgi.dll (OptiScaler, SpecialK/UnX) podem
-  causar instabilidade no Proton — se o jogo travar, remova-os.
-- Saves não são afetados pela tradução.
+Caso tenha dúvida sobre os arquivos originais, use a função "Verificar
+integridade dos arquivos" da Steam.
 
 ================================================================
-  CRÉDITOS
+  COMPATIBILIDADE E LIMITAÇÕES
+================================================================
+- Não substitua o arquivo FFX2_Data.vbf.
+- O FFX da mesma coletânea não é modificado por este pacote.
+- Mods que também utilizam dinput8.dll podem entrar em conflito.
+- Outros injetores e modificações podem causar instabilidade no Proton.
+- O pacote não foi projetado para modificar saves. Faça backup por
+  precaução antes de instalar qualquer mod.
+
+================================================================
+  LICENÇAS E CRÉDITOS
 ================================================================
 - External File Loader: ffgriever
-  (nexusmods.com/finalfantasyxx2hdremaster/mods/150 — v1.1.2)
-- Tradução PT-BR do X-2: projeto independente, com terminologia
-  baseada na tradução do FFX-1 da Central de Traduções.
-- Tradução distribuída gratuitamente. Não venda. O jogo original é
-  necessário (compre na Steam).
+  Nexus Mods nº 150, versão utilizada: 1.1.2
+- Tradução PT-BR do X-2: projeto independente de Carlos Alexandre de
+  Oliveira, com terminologia inspirada na tradução do FFX da Central de
+  Traduções.
+- O código original do site, scripts e instalador possui licença própria.
+- Essa licença não abrange textos, personagens, imagens, marcas, arquivos
+  derivados do jogo nem componentes de terceiros.
+- Consulte LICENSE e THIRD-PARTY-NOTICES.md antes de reutilizar qualquer
+  parte do repositório.
 
-Versão do pacote: 1.1 (2026-07-13) — inclui instalador automático para
-Windows; corrigidos erros de texto em telas de menu (rótulo "Áudio"
-que aparecia cortado como "udio"; rótulo "Vsync" que aparecia
-corrompido nas opções de vídeo).
+Distribuição gratuita. Não venda, não cobre acesso e não condicione o
+download a pagamentos ou doações.
+
+Versão do pacote: 1.1 (pré-lançamento revisado em 2026-07-13)
+Correções desta versão: rótulo "Audio" ajustado para evitar corte do glifo
+acentuado e rótulo "Vsync" corrigido nas opções de vídeo.

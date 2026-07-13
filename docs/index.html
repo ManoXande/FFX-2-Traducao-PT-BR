@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Tradução PT-BR de Final Fantasy X-2 HD Remaster (Steam e Steam Deck) | Download e Tutorial</title>
-<meta name="description" content="Primeira tradução em português do Brasil do FINAL FANTASY X-2 HD Remaster para PC (Steam) e Steam Deck. Download gratuito, instalador para Windows, tutorial passo a passo, sem modificar arquivos originais.">
+<title>Tradução PT-BR de Final Fantasy X-2 HD Remaster | Projeto de fã não oficial</title>
+<meta name="description" content="Projeto gratuito e não oficial de tradução em português do Brasil do FINAL FANTASY X-2 HD Remaster para Steam, Windows e Steam Deck. Acompanhe o lançamento e consulte o tutorial.">
 <link rel="canonical" href="https://manoxande.github.io/FFX-2-Traducao-PT-BR/">
 <meta name="theme-color" content="#0d1b26">
 <meta name="author" content="Carlos Alexandre de Oliveira">
@@ -12,12 +12,12 @@
 <meta property="og:type" content="website">
 <meta property="og:locale" content="pt_BR">
 <meta property="og:title" content="Final Fantasy X-2 em Português do Brasil">
-<meta property="og:description" content="A primeira tradução PT-BR do FFX-2 HD Remaster. Gratuita, para Steam e Steam Deck, sem tocar nos arquivos originais do jogo.">
+<meta property="og:description" content="Projeto gratuito e não oficial de tradução PT-BR do FFX-2 HD Remaster para Steam e Steam Deck.">
 <meta property="og:image" content="https://manoxande.github.io/FFX-2-Traducao-PT-BR/assets/img/og-image.jpg">
 <meta property="og:url" content="https://manoxande.github.io/FFX-2-Traducao-PT-BR/">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Final Fantasy X-2 em Português do Brasil">
-<meta name="twitter:description" content="A primeira tradução PT-BR do FFX-2 HD Remaster. Gratuita, para Steam e Steam Deck.">
+<meta name="twitter:description" content="Projeto gratuito e não oficial de tradução PT-BR do FFX-2 HD Remaster.">
 <meta name="twitter:image" content="https://manoxande.github.io/FFX-2-Traducao-PT-BR/assets/img/og-image.jpg">
 
 <link rel="icon" href="./favicon.svg" type="image/svg+xml">
@@ -33,23 +33,9 @@
   "applicationCategory": "GameModification",
   "operatingSystem": "Windows, SteamOS",
   "inLanguage": "pt-BR",
-  "softwareVersion": "1.0",
-  "downloadUrl": "https://github.com/ManoXande/FFX-2-Traducao-PT-BR/releases/download/v1.0/FFX2-Traducao-PTBR-Setup.exe",
-  "author": { "@type": "Person", "name": "Carlos Alexandre de Oliveira" },
-  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "BRL" }
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "HowTo",
-  "name": "Como instalar a tradução PT-BR do FFX-2 no Windows",
-  "inLanguage": "pt-BR",
-  "step": [
-    { "@type": "HowToStep", "position": 1, "name": "Baixe e abra o instalador", "text": "Baixe o instalador FFX2-Traducao-PTBR-Setup.exe e abra ele. Se o Windows mostrar um aviso de segurança, clique em Mais informações e depois Executar assim mesmo." },
-    { "@type": "HowToStep", "position": 2, "name": "Siga o assistente", "text": "O instalador encontra sozinho a pasta do jogo na Steam. Se não encontrar, aponte a pasta manualmente quando ele pedir. Nenhum arquivo original é modificado." },
-    { "@type": "HowToStep", "position": 3, "name": "Abra o jogo", "text": "Abra o jogo pela Steam e escolha FFX-2." }
-  ]
+  "softwareVersion": "1.0 (pré-lançamento)",
+  "isAccessibleForFree": true,
+  "author": { "@type": "Person", "name": "Carlos Alexandre de Oliveira" }
 }
 </script>
 <script type="application/ld+json">
@@ -57,11 +43,10 @@
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    { "@type": "Question", "name": "Preciso do jogo original?", "acceptedAnswer": { "@type": "Answer", "text": "Sim. A tradução não inclui o jogo: você precisa do FINAL FANTASY X/X-2 HD Remaster original da Steam, atualizado. A tradução é gratuita e não pode ser vendida." } },
-    { "@type": "Question", "name": "Funciona no Steam Deck?", "acceptedAnswer": { "@type": "Answer", "text": "Sim, perfeitamente, via Proton. Só não pule o passo do WINEDLLOVERRIDES no tutorial: sem ele o Wine ignora o loader e o jogo abre em inglês." } },
-    { "@type": "Question", "name": "Apareceu \"Broken game data\". E agora?", "acceptedAnswer": { "@type": "Answer", "text": "Algum arquivo original foi substituído por engano. Verifique a integridade dos arquivos pela Steam (Propriedades, Arquivos Instalados, Verificar integridade) e refaça a instalação. Este pacote não substitui nenhum arquivo original." } },
-    { "@type": "Question", "name": "O jogo abriu em inglês. E agora?", "acceptedAnswer": { "@type": "Answer", "text": "No Windows, confira se a dinput8.dll está na mesma pasta do FFX-2.exe (e não dentro de uma subpasta). No Steam Deck, confira o WINEDLLOVERRIDES. Confira também se existe data/mods/ffx-2_data dentro da pasta do jogo." } },
-    { "@type": "Question", "name": "Afeta meus saves ou o FFX-1?", "acceptedAnswer": { "@type": "Answer", "text": "Não e não. Saves continuam intactos, e o FFX-1 da coletânea não é tocado (a tradução só contém arquivos do X-2). Para jogar o FFX-1 em português, use o patch da Central de Traduções." } }
+    { "@type": "Question", "name": "Preciso do jogo original?", "acceptedAnswer": { "@type": "Answer", "text": "Sim. A tradução não inclui o jogo e exige o FINAL FANTASY X/X-2 HD Remaster original da Steam, atualizado." } },
+    { "@type": "Question", "name": "Funciona no Steam Deck?", "acceptedAnswer": { "@type": "Answer", "text": "O pacote foi preparado para Steam Deck e Linux via Proton. É necessário configurar o WINEDLLOVERRIDES conforme o tutorial." } },
+    { "@type": "Question", "name": "Apareceu \"Broken game data\". E agora?", "acceptedAnswer": { "@type": "Answer", "text": "Algum arquivo original pode ter sido substituído por engano. Verifique a integridade dos arquivos pela Steam e refaça a instalação usando apenas o pacote oficial do projeto." } },
+    { "@type": "Question", "name": "Afeta meus saves ou o FFX-1?", "acceptedAnswer": { "@type": "Answer", "text": "O pacote não foi projetado para alterar saves nem os arquivos do FFX-1. Faça backup dos saves antes de instalar qualquer mod." } }
   ]
 }
 </script>
@@ -71,24 +56,24 @@
 
 <header class="topo" id="topo">
   <a class="marca" href="#inicio">FFX-2 <b>PT-BR</b></a>
-  <a class="btn btn-coral topo__baixar" href="#download">Baixar</a>
+  <a class="btn btn-coral topo__baixar" href="#download">Lançamento</a>
 </header>
 
 <main id="conteudo-principal">
 
-  <!-- Início -->
   <section class="hero" id="inicio">
     <div class="pyreflies" aria-hidden="true" id="pyreflies"></div>
     <div class="envelope hero__grade">
       <div class="hero__texto">
         <p class="kicker reveal">Tradução de fã · Gratuita · Steam e Steam Deck</p>
         <h1 class="reveal">Final Fantasy X-2, enfim em português do Brasil</h1>
-        <p class="hero__lead reveal">A primeira tradução PT-BR do FFX-2 HD Remaster. São cerca de 35 mil falas traduzidas: história, batalhas, menus e a DLC Last Mission. Instala em minutos e não toca em nenhum arquivo original do jogo.</p>
+        <p class="hero__lead reveal">Uma tradução PT-BR do FFX-2 HD Remaster com cerca de 35 mil falas trabalhadas: história, batalhas, menus e a DLC Last Mission. O pacote utiliza uma pasta separada para carregar os conteúdos traduzidos, preservando os arquivos originais do jogo.</p>
         <div class="hero__ctas reveal">
-          <a class="btn btn-coral btn-grande" href="#download">Baixar a tradução v1.0</a>
-          <a class="btn btn-contorno" href="#tutorial">Como instalar</a>
+          <a class="btn btn-coral btn-grande" href="#download">Acompanhar o lançamento</a>
+          <a class="btn btn-contorno" href="#tutorial">Ver como instalar</a>
         </div>
-        <p class="hero__confianca reveal">Código aberto no GitHub · Não afeta seus saves · Desinstalação 100% limpa</p>
+        <p class="hero__confianca reveal">Código do site e do instalador disponível para auditoria · Não comercial · Remoção reversível</p>
+        <p class="hero__confianca reveal"><strong>Projeto gratuito e não oficial.</strong> Não possui vínculo, autorização, patrocínio ou endosso da Square Enix. Requer uma cópia legítima da versão Steam.</p>
       </div>
       <div class="hero__arte reveal" aria-hidden="true">
         <img class="arte-rikku" src="./assets/img/rikku.webp" width="811" height="1764" alt="" loading="eager">
@@ -98,17 +83,15 @@
     </div>
   </section>
 
-  <!-- Faixa cinematográfica: atmosfera FFX-2 -->
   <section class="cena" aria-label="Cena do jogo">
     <img src="./assets/img/cena-show.jpg" width="1280" height="720" alt="Yuna cantando no palco de Luca, sob os holofotes, na abertura de FFX-2" loading="lazy">
     <div class="cena__texto reveal">
       <p class="cena__kicker">Uma nova aventura em Spira</p>
       <p class="cena__frase">Dois anos depois de Sin, Yuna troca o cajado de invocadora pela pistola de caçadora de esferas.</p>
-      <p class="cena__credito">Cena da abertura de FINAL FANTASY X-2.</p>
+      <p class="cena__credito">Imagem ilustrativa de FINAL FANTASY X-2.</p>
     </div>
   </section>
 
-  <!-- O que é -->
   <section class="secao" id="conteudo">
     <div class="envelope">
       <h2 class="reveal">O que você vai jogar em português</h2>
@@ -120,55 +103,53 @@
             <li>Falas, popups e tutoriais de batalha</li>
             <li>Menus, descrições de itens, habilidades, acessórios e da Grade de Vestes</li>
             <li>Bestiário completo (descrições do Scan)</li>
-            <li>Telas de sistema do remaster: autosave, save/load, configurações</li>
+            <li>Telas de sistema do remaster: autosave, save/load e configurações</li>
             <li>A DLC Last Mission inteira</li>
-            <li>Fonte corrigida para exibir ã e õ de verdade nos diálogos</li>
+            <li>Fonte ajustada para exibir ã e õ nos diálogos</li>
           </ul>
         </div>
         <div class="coluna coluna-nao reveal">
-          <h3>Fica em inglês (de propósito)</h3>
-          <p class="intro">Seguindo o padrão da tradução clássica do FFX, para manter a terminologia que a comunidade já conhece:</p>
+          <h3>Permanece em inglês</h3>
+          <p class="intro">Alguns elementos permanecem em inglês para preservar a terminologia já conhecida pela comunidade ou por limitações técnicas atuais:</p>
           <ul class="lista-limpa lista-nao">
-            <li>Nomes de itens, habilidades e lugares (Potion, Garment Grid, Luca)</li>
-            <li>Os rótulos do menu principal (Item, Ability, Equip), que vivem em arquivos Flash ainda não editáveis. As descrições dentro deles já estão em português</li>
-            <li>Nas telas de boot e configuração, ã e õ aparecem como ä e ö (limitação da fonte dessas telas)</li>
+            <li>Nomes de itens, habilidades e lugares, como Potion, Garment Grid e Luca</li>
+            <li>Rótulos do menu principal, como Item, Ability e Equip; as descrições internas já estão em português</li>
+            <li>Nas telas de boot e configuração, ã e õ podem aparecer como ä e ö</li>
           </ul>
         </div>
       </div>
-      <p class="fecho reveal">Honestidade acima de tudo: é assim que a tradução está hoje, na v1.0.</p>
+      <p class="fecho reveal">Esta é a situação atual do pacote 1.0. Limitações conhecidas serão documentadas com transparência.</p>
     </div>
   </section>
 
-  <!-- Por que é seguro -->
   <section class="secao" id="como-funciona">
     <div class="envelope">
-      <h2 class="reveal">É seguro? Sim, e aqui está o porquê</h2>
+      <h2 class="reveal">Como a tradução funciona e quais arquivos ela altera</h2>
       <div class="leitura reveal">
-        <p>O FFX-2 HD Remaster tem uma trava de integridade: se qualquer arquivo original for alterado, o launcher recusa iniciar com a mensagem "Broken game data". Por isso nunca existiu tradução dele.</p>
-        <p>Esta tradução contorna o problema sem tocar no jogo. Ela usa o External File Loader, um mod do modder ffgriever publicado no Nexus Mods, que carrega os arquivos traduzidos de uma pasta separada (data/mods) por cima dos originais, em tempo real, só na memória.</p>
-        <p>Na prática: nenhum arquivo original é modificado, seus saves continuam intactos e desinstalar é apagar meia dúzia de arquivos. O jogo volta a ser exatamente o que era.</p>
+        <p>O FFX-2 HD Remaster verifica a integridade de seus arquivos originais. Por isso, o pacote não substitui o arquivo <span class="mono">FFX2_Data.vbf</span>.</p>
+        <p>A tradução utiliza o External File Loader, ferramenta criada por ffgriever e publicada no Nexus Mods. O loader permite que o jogo leia arquivos adicionais armazenados em <span class="mono">data/mods</span>, mantendo os arquivos originais instalados pela Steam.</p>
+        <p>O pacote adiciona o loader, seus arquivos de configuração e os conteúdos traduzidos. A remoção consiste em apagar esses arquivos adicionais ou usar o desinstalador no Windows.</p>
       </div>
       <div class="prints reveal">
         <figure>
           <img src="./assets/img/print-1.jpg" width="1600" height="900" alt="Yuna, Rikku e Paine na cabine da nave Celsius" loading="lazy">
-          <figcaption>Imagens ilustrativas do jogo. Prints da tradução em breve.</figcaption>
+          <figcaption>Imagem ilustrativa do jogo. Capturas da tradução serão incluídas antes do lançamento público.</figcaption>
         </figure>
         <figure>
           <img src="./assets/img/print-2.jpg" width="1600" height="900" alt="As Gullwings em campo, prontas para a batalha" loading="lazy">
-          <figcaption>Imagens ilustrativas do jogo. Prints da tradução em breve.</figcaption>
+          <figcaption>Imagem ilustrativa do jogo. Capturas da tradução serão incluídas antes do lançamento público.</figcaption>
         </figure>
       </div>
     </div>
   </section>
 
-  <!-- Baixar -->
   <section class="secao download" id="download">
     <div class="envelope">
       <div class="download__caixa">
-        <h2 class="reveal">Baixe a tradução</h2>
+        <h2 class="reveal">Download em preparação</h2>
 
         <div class="precisa reveal">
-          <p class="precisa__titulo">Antes de baixar, você precisa de:</p>
+          <p class="precisa__titulo">Antes de instalar, você precisará de:</p>
           <ul class="reqs">
             <li>O jogo FINAL FANTASY X/X-2 HD Remaster original da <a href="https://store.steampowered.com/app/359870/FINAL_FANTASY_XX2_HD_Remaster/">Steam</a>, atualizado</li>
             <li>Windows, ou Steam Deck / Linux rodando com Proton</li>
@@ -178,26 +159,34 @@
 
         <div class="baixar reveal">
           <div class="baixar__destaque">
-            <span class="baixar__tag">Recomendado para Windows</span>
-            <a class="btn btn-coral btn-grande" href="https://github.com/ManoXande/FFX-2-Traducao-PT-BR/releases/download/v1.0/FFX2-Traducao-PTBR-Setup.exe">Baixar o instalador para Windows</a>
-            <p class="baixar__ajuda">Um clique, um assistente. Ele acha sozinho a pasta do jogo na Steam e instala tudo. Nenhum arquivo original é tocado.</p>
+            <span class="baixar__tag">Situação atual</span>
+            <a class="btn btn-coral btn-grande" href="https://github.com/ManoXande/FFX-2-Traducao-PT-BR/releases">Acompanhar as Releases no GitHub</a>
+            <p class="baixar__ajuda">Os arquivos oficiais da v1.0 ainda não foram publicados em uma Release. Até lá, não existem links oficiais de download do instalador ou do pacote manual.</p>
           </div>
           <div class="baixar__alt">
-            <a class="btn btn-contorno" href="https://github.com/ManoXande/FFX-2-Traducao-PT-BR/releases/download/v1.0/FFX-2-Traducao-PT-BR-v1.0.zip">Baixar o pacote manual (.zip)</a>
-            <p class="baixar__ajuda">Para Steam Deck, Linux, ou quem prefere copiar os arquivos na mão.</p>
+            <a class="btn btn-contorno" href="https://github.com/ManoXande/FFX-2-Traducao-PT-BR">Auditar o código no GitHub</a>
+            <p class="baixar__ajuda">O código original do site, dos scripts e do instalador pode ser consultado publicamente.</p>
           </div>
         </div>
 
-        <p class="nota reveal">v1.0, publicada em julho de 2026. Gratuita para sempre. Código e arquivos abertos no <a href="https://github.com/ManoXande/FFX-2-Traducao-PT-BR">GitHub</a>.</p>
+        <div class="precisa reveal">
+          <p class="precisa__titulo">Verificação do download</p>
+          <ul class="reqs">
+            <li>O tamanho e o hash SHA-256 de cada arquivo serão publicados junto com a Release oficial</li>
+            <li>O instalador do Windows ainda não possui assinatura digital e poderá exibir um aviso do SmartScreen</li>
+            <li>Confira o hash publicado antes de executar o instalador; a instalação manual pelo ZIP também será oferecida</li>
+          </ul>
+        </div>
+
+        <p class="nota reveal">Projeto gratuito e não comercial. O código próprio está disponível para auditoria; materiais derivados e componentes de terceiros não são relicenciados como software livre.</p>
       </div>
     </div>
   </section>
 
-  <!-- Como instalar -->
   <section class="secao" id="tutorial">
     <div class="envelope">
       <h2 class="reveal">Como instalar</h2>
-      <p class="leitura reveal">No Windows, o instalador faz tudo por você em poucos cliques. No Steam Deck e no Linux, a instalação é manual. Escolha o seu sistema:</p>
+      <p class="leitura reveal">As instruções abaixo serão usadas quando a Release oficial for publicada. No Windows, haverá instalador e opção manual. No Steam Deck e no Linux, a instalação será manual.</p>
 
       <div class="tabs reveal" role="tablist" aria-label="Sistema operacional">
         <button class="tab" role="tab" id="tab-win" aria-controls="painel-win" aria-selected="true">Windows (PC)</button>
@@ -207,25 +196,28 @@
       <div class="painel" id="painel-win" role="tabpanel" aria-labelledby="tab-win" tabindex="0">
         <ol class="passos">
           <li>
-            <p>Baixe o instalador <span class="mono">FFX2-Traducao-PTBR-Setup.exe</span> no botão acima e abra ele. Se o Windows mostrar um aviso de segurança (por ser um programa novo), clique em Mais informações, depois Executar assim mesmo.</p>
+            <p>Baixe o instalador <span class="mono">FFX2-Traducao-PTBR-Setup.exe</span> somente pela Release oficial. Confira o hash SHA-256 informado na página antes de executar.</p>
           </li>
           <li>
-            <p>Siga as telas do assistente. Ele encontra sozinho a pasta do jogo na Steam. Se não encontrar, é só apontar a pasta manualmente quando ele pedir.</p>
+            <p>Se o Windows mostrar um aviso por o instalador ainda não possuir assinatura digital, confirme primeiro que o arquivo e o hash correspondem à Release oficial.</p>
           </li>
           <li>
-            <p>Pronto. Abra o jogo pela Steam e escolha FFX-2. Bem-vindo de volta a Spira.</p>
+            <p>Siga o assistente. Ele tenta localizar a pasta do jogo na Steam; se não encontrar, selecione-a manualmente.</p>
+          </li>
+          <li>
+            <p>Abra o jogo pela Steam e escolha FFX-2.</p>
           </li>
         </ol>
 
         <details class="manual">
-          <summary>Prefere instalar na mão? Instalação manual no Windows</summary>
+          <summary>Instalação manual no Windows</summary>
           <ol class="passos">
             <li>
-              <p>Baixe o pacote manual (.zip) e encontre a pasta do jogo. Na Steam, clique com o botão direito em FINAL FANTASY X/X-2 HD Remaster, depois Gerenciar, depois Procurar arquivos locais.</p>
+              <p>Baixe o pacote manual pela Release oficial e encontre a pasta do jogo. Na Steam, clique com o botão direito em FINAL FANTASY X/X-2 HD Remaster, depois Gerenciar e Procurar arquivos locais.</p>
               <div class="bloco-mono"><button class="copiar" type="button">copiar</button><span>C:\Program Files (x86)\Steam\steamapps\common\FINAL FANTASY FFX&amp;FFX-2 HD Remaster</span></div>
             </li>
             <li>
-              <p>Extraia o zip e copie TODO o conteúdo da pasta arquivos-do-jogo para dentro da pasta do jogo, ao lado do FFX-2.exe. Devem ficar na raiz: dinput8.dll, simpleLog.dll, hook.ini, a pasta modules e a pasta data. A pasta data já existe no jogo: apenas mescle, nada é substituído.</p>
+              <p>Extraia o ZIP e copie o conteúdo da pasta <span class="mono">arquivos-do-jogo</span> para a pasta do jogo, ao lado do <span class="mono">FFX-2.exe</span>. Serão adicionados <span class="mono">dinput8.dll</span>, <span class="mono">simpleLog.dll</span>, <span class="mono">hook.ini</span>, a pasta <span class="mono">modules</span> e o conteúdo de <span class="mono">data/mods</span>.</p>
             </li>
             <li>
               <p>Abra o jogo pela Steam e escolha FFX-2.</p>
@@ -237,17 +229,17 @@
       <div class="painel" id="painel-deck" role="tabpanel" aria-labelledby="tab-deck" tabindex="0" hidden>
         <ol class="passos">
           <li>
-            <p>Baixe o pacote manual (.zip) no botão acima. No Modo Desktop, encontre a pasta do jogo:</p>
+            <p>Baixe o pacote manual pela Release oficial. No Modo Desktop, encontre a pasta do jogo:</p>
             <div class="bloco-mono"><button class="copiar" type="button">copiar</button><span>~/.local/share/Steam/steamapps/common/FINAL FANTASY FFX&amp;FFX-2 HD Remaster</span></div>
             <div class="bloco-mono"><button class="copiar" type="button">copiar</button><span>/run/media/mmcblk0p1/steamapps/common/FINAL FANTASY FFX&amp;FFX-2 HD Remaster</span></div>
           </li>
           <li>
-            <p>Copie todo o conteúdo da pasta arquivos-do-jogo para dentro da pasta do jogo (idêntico ao passo 2 do Windows manual).</p>
+            <p>Copie o conteúdo da pasta <span class="mono">arquivos-do-jogo</span> para a pasta do jogo.</p>
           </li>
           <li>
-            <p>Passo extra obrigatório: autorize o Wine a carregar o loader. Na Steam: botão direito no jogo, Propriedades, Opções de Inicialização, e cole:</p>
+            <p>Nas opções de inicialização da Steam, adicione:</p>
             <div class="bloco-mono"><button class="copiar" type="button">copiar</button><span>WINEDLLOVERRIDES="dinput8=n,b" %command%</span></div>
-            <p>Se já houver algo escrito ali, adicione o WINEDLLOVERRIDES antes do %command% existente.</p>
+            <p>Se já houver outro comando, preserve-o e mantenha o <span class="mono">WINEDLLOVERRIDES</span> antes do <span class="mono">%command%</span>.</p>
           </li>
           <li>
             <p>Abra o jogo pela Steam e escolha FFX-2.</p>
@@ -256,38 +248,37 @@
       </div>
 
       <div class="confere reveal">
-        <h3>Deu certo?</h3>
-        <p>O launcher abre sem a mensagem "Broken game data". Um arquivo hook.log aparece na pasta do jogo. Menus, diálogos e batalhas em português. Bem-vindo de volta a Spira.</p>
+        <h3>Como conferir</h3>
+        <p>O jogo deve iniciar sem a mensagem "Broken game data". O loader cria um arquivo <span class="mono">hook.log</span> na pasta do jogo e os conteúdos traduzidos passam a aparecer.</p>
       </div>
 
       <div class="faq reveal">
         <details>
           <summary>Preciso do jogo original?</summary>
-          <p>Sim. A tradução não inclui o jogo: você precisa do FINAL FANTASY X/X-2 HD Remaster original da Steam, atualizado. A tradução é gratuita e não pode ser vendida.</p>
+          <p>Sim. O pacote não inclui o jogo e exige o FINAL FANTASY X/X-2 HD Remaster original da Steam, atualizado.</p>
         </details>
         <details>
           <summary>Funciona no Steam Deck?</summary>
-          <p>Sim, perfeitamente, via Proton. Só não pule o passo do WINEDLLOVERRIDES no tutorial: sem ele o Wine ignora o loader e o jogo abre em inglês.</p>
+          <p>O pacote foi preparado para Steam Deck e Linux via Proton. É necessário configurar o <span class="mono">WINEDLLOVERRIDES</span> conforme o tutorial.</p>
         </details>
         <details>
           <summary>Apareceu "Broken game data". E agora?</summary>
-          <p>Algum arquivo original foi substituído por engano. Verifique a integridade dos arquivos pela Steam (Propriedades, Arquivos Instalados, Verificar integridade) e refaça a instalação. Este pacote não substitui nenhum arquivo original.</p>
+          <p>Verifique a integridade dos arquivos pela Steam e refaça a instalação usando apenas o pacote oficial. Não substitua manualmente o arquivo <span class="mono">FFX2_Data.vbf</span>.</p>
         </details>
         <details>
           <summary>O jogo abriu em inglês. E agora?</summary>
-          <p>No Windows, confira se a dinput8.dll está na mesma pasta do FFX-2.exe (e não dentro de uma subpasta). No Steam Deck, confira o WINEDLLOVERRIDES. Confira também se existe data/mods/ffx-2_data dentro da pasta do jogo.</p>
+          <p>No Windows, confira se <span class="mono">dinput8.dll</span> está na mesma pasta do <span class="mono">FFX-2.exe</span>. No Steam Deck, confira o <span class="mono">WINEDLLOVERRIDES</span> e a existência de <span class="mono">data/mods/ffx-2_data</span>.</p>
         </details>
         <details>
           <summary>Afeta meus saves ou o FFX-1?</summary>
-          <p>Não e não. Saves continuam intactos, e o FFX-1 da coletânea não é tocado (a tradução só contém arquivos do X-2). Para jogar o FFX-1 em português, use o patch da Central de Traduções.</p>
+          <p>O pacote não foi projetado para alterar saves nem os arquivos do FFX-1. Como boa prática, faça backup dos saves antes de instalar qualquer mod.</p>
         </details>
       </div>
 
-      <p class="desinstalar reveal">Para remover: use Desinstalar um programa no Windows, ou apague da pasta do jogo dinput8.dll, simpleLog.dll, hook.ini, hook.log, a pasta modules e a pasta data/mods. No Steam Deck, remova também a opção de inicialização. Nada do jogo original foi alterado, então isso restaura 100%.</p>
+      <p class="desinstalar reveal">Para remover: use o desinstalador no Windows ou apague os arquivos adicionais do loader, a pasta <span class="mono">modules</span> e a pasta <span class="mono">data/mods</span>. No Steam Deck, remova também a opção de inicialização. A Steam pode verificar a integridade dos arquivos originais caso necessário.</p>
     </div>
   </section>
 
-  <!-- A história -->
   <section class="secao" id="historia">
     <div class="envelope">
       <h2 class="reveal">A história por trás desta tradução</h2>
@@ -306,62 +297,30 @@
 
       <div class="historia__ato reveal">
         <p class="epoca">2026</p>
-        <p>Vinte e quatro anos depois, voltei a Spira. Rejoguei o Final Fantasy X inteiro, agora em português, com a tradução da Central de Traduções, e finalmente vi o final que o garoto de 2002 não viu. No dia seguinte, emendei no X-2. E descobri que ele nunca tinha ganhado uma tradução: o jogo trava na inicialização se qualquer arquivo original for modificado, e isso afastou todo mundo por anos.</p>
-        <p>Então resolvi fazer. Estudei como a tradução do FFX foi construída, entendi como servir os textos traduzidos por fora, sem encostar em nenhum arquivo do jogo, e traduzi o X-2 inteiro: cada diálogo, cada batalha, cada descrição de item. O resultado está nesta página, de graça, para qualquer pessoa que queira ouvir essa história em português.</p>
+        <p>Vinte e quatro anos depois, voltei a Spira. Rejoguei o Final Fantasy X inteiro, agora em português, com a tradução da Central de Traduções, e finalmente vi o final que o garoto de 2002 não viu. No dia seguinte, emendei no X-2 e descobri que as verificações de integridade dificultavam a alteração direta dos arquivos originais.</p>
+        <p>Então resolvi fazer. Estudei como a tradução do FFX foi construída, aprendi a carregar os textos traduzidos por uma pasta adicional e trabalhei no X-2 inteiro: diálogos, batalhas, menus, descrições e Last Mission. O resultado é compartilhado gratuitamente para quem possui o jogo original e quer acompanhar essa história em português.</p>
         <p class="assinatura">Carlos Alexandre de Oliveira</p>
       </div>
 
       <div class="bastidores reveal">
         <h3>Como foi feita</h3>
-        <p>A tradução foi construída em parceria com o Claude (Fable 5), o modelo mais avançado da assinatura Max de 200 dólares da Anthropic, com acesso cedido por um amigo desenvolvedor de jogos de grande relevância no mercado mobile, que acreditou no projeto. Foram meses de trabalho entre engenharia reversa dos formatos do jogo, tradução das cerca de 35 mil falas e revisão, mantendo a terminologia consagrada pela tradução do FFX.</p>
+        <p>O projeto combinou engenharia reversa dos formatos do jogo, ferramentas de tradução assistida por inteligência artificial e revisão humana, preservando a terminologia já conhecida pela comunidade brasileira de Final Fantasy X.</p>
       </div>
     </div>
   </section>
 
-  <!-- Comece pelo FFX -->
   <section class="faixa" id="ffx">
     <div class="envelope reveal">
       <h2>Comece pelo Final Fantasy X</h2>
-      <p>Nada disso existiria sem a monumental tradução do Final Fantasy X feita, no braço, pela Central de Traduções. Foi ela que me fez terminar o X depois de 24 anos, que definiu a terminologia que respeito aqui no X-2, e que provou que dava para trazer Spira inteira para o português. Se você ainda não jogou o X traduzido, comece por lá: é trabalho de gente que ama isso tanto quanto a gente.</p>
-      <p><a href="https://www.centraldetraducoes.net.br/2017/04/traducao-do-final-fantasy-x-hd-remaster-pc.html">Baixar a tradução do FFX na Central de Traduções</a></p>
+      <p>Nada disso existiria sem a tradução do Final Fantasy X feita pela Central de Traduções. Foi ela que me fez terminar o X depois de 24 anos, definiu a terminologia respeitada neste projeto e mostrou a importância de tornar Spira acessível em português.</p>
+      <p><a href="https://www.centraldetraducoes.net.br/2017/04/traducao-do-final-fantasy-x-hd-remaster-pc.html">Conhecer a tradução do FFX na Central de Traduções</a></p>
     </div>
   </section>
 
-  <!-- Apoie -->
-  <section class="secao apoie" id="apoie">
-    <div class="envelope">
-      <h2 class="reveal">Pague um café para o tradutor ☕</h2>
-      <p class="lead reveal">Esta tradução é e sempre será gratuita. Mas se ela te devolveu um pedaço de 2002, um café ajuda a financiar as próximas: cada doação vira hora de trabalho em outra tradução.</p>
-
-      <div class="cafe-caixa reveal">
-        <div id="pix-pendente" hidden>
-          <svg class="xicara" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M8 18h26v10a10 10 0 0 1-10 10h-6a10 10 0 0 1-10-10z"></path>
-            <path d="M34 21h4a5 5 0 0 1 0 10h-4"></path>
-            <path d="M15 6c-1.5 2 1.5 3 0 5M22 6c-1.5 2 1.5 3 0 5M29 6c-1.5 2 1.5 3 0 5"></path>
-          </svg>
-          <p>Doações via PIX em breve. Enquanto isso, deixe uma estrela no <a href="https://github.com/ManoXande/FFX-2-Traducao-PT-BR">GitHub</a>: também vale muito.</p>
-        </div>
-
-        <div id="pix-ativo" hidden>
-          <div class="pix-qr">
-            <img src="./assets/img/pix-qr.svg" width="232" height="232" alt="QR Code PIX para doação" loading="lazy">
-          </div>
-          <div class="pix-copia">
-            <code id="pix-copia-texto"></code>
-            <button class="btn btn-dourado" type="button" id="pix-copiar">Copiar código PIX</button>
-          </div>
-          <p class="pix-nome">Chave em nome de Carlos Alexandre de Oliveira.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Comunidade -->
   <section class="secao sugestoes" id="sugestoes">
     <div class="envelope reveal">
-      <h2>Qual jogo merece a próxima tradução?</h2>
-      <p>O plano é não parar no X-2. Doações e sugestões decidem o rumo: diga qual jogo você quer ver em português e vote nas ideias da comunidade.</p>
+      <h2>Ajude a melhorar o projeto</h2>
+      <p>Relate erros, sugira ajustes de terminologia e vote nas ideias da comunidade. O projeto não aceita pagamento nem condiciona downloads a doações.</p>
       <a class="btn btn-dourado" href="https://github.com/ManoXande/FFX-2-Traducao-PT-BR/discussions/categories/ideas">Sugerir e votar no GitHub</a>
     </div>
   </section>
@@ -369,7 +328,7 @@
   <section class="secao" id="comentarios">
     <div class="envelope">
       <h2 class="reveal">Comentários e feedback</h2>
-      <p class="leitura reveal">Funcionou? Achou um erro de tradução? Jogou em 2002 também? Deixe seu recado. Os comentários usam sua conta do GitHub, então chegam direto até mim.</p>
+      <p class="leitura reveal">Funcionou? Achou um erro de tradução? Deixe seu relato. Os comentários usam sua conta do GitHub e ficam vinculados às Discussions do projeto.</p>
       <div class="giscus" id="giscus"></div>
       <p class="fallback">Prefere abrir uma conversa? Use as <a href="https://github.com/ManoXande/FFX-2-Traducao-PT-BR/discussions">Discussions do projeto</a>.</p>
     </div>
@@ -379,9 +338,10 @@
 
 <footer class="rodape">
   <div class="envelope">
-    <p>External File Loader por <a href="https://www.nexusmods.com/finalfantasyxx2hdremaster/mods/150">ffgriever (Nexus Mods)</a>. Terminologia baseada na tradução do FFX da <a href="https://www.centraldetraducoes.net.br/2017/04/traducao-do-final-fantasy-x-hd-remaster-pc.html">Central de Traduções</a>. Tradução construída com Claude (Fable 5) da Anthropic.</p>
-    <p>FINAL FANTASY X-2 é marca registrada da Square Enix Co., Ltd. Este é um projeto de fãs, gratuito, sem fins lucrativos e sem qualquer afiliação com a Square Enix. Imagens do jogo usadas apenas para ilustração. Não venda esta tradução. O jogo original é necessário.</p>
-    <p class="final">Feito no Brasil, de fã para fã. Carlos Alexandre de Oliveira, 2026. <a href="https://github.com/ManoXande/FFX-2-Traducao-PT-BR">Código no GitHub</a>.</p>
+    <p>External File Loader por <a href="https://www.nexusmods.com/finalfantasyxx2hdremaster/mods/150">ffgriever (Nexus Mods)</a>. Terminologia inspirada na tradução do FFX da <a href="https://www.centraldetraducoes.net.br/2017/04/traducao-do-final-fantasy-x-hd-remaster-pc.html">Central de Traduções</a>.</p>
+    <p>FINAL FANTASY X-2, seus personagens, textos, imagens e marcas pertencem aos respectivos titulares. Este projeto de fã é gratuito, não comercial, não inclui o jogo e não possui vínculo, autorização, patrocínio ou endosso da Square Enix. O jogo original é necessário.</p>
+    <p>Consulte a <a href="https://github.com/ManoXande/FFX-2-Traducao-PT-BR/blob/master/LICENSE">licença do código próprio</a> e os <a href="https://github.com/ManoXande/FFX-2-Traducao-PT-BR/blob/master/THIRD-PARTY-NOTICES.md">avisos sobre materiais e componentes de terceiros</a>.</p>
+    <p class="final">Feito no Brasil, de fã para fã. Carlos Alexandre de Oliveira, 2026. <a href="https://github.com/ManoXande/FFX-2-Traducao-PT-BR">Código para auditoria no GitHub</a>.</p>
   </div>
 </footer>
 

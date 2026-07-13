@@ -1,19 +1,13 @@
 /* ============================================================
    Tradução PT-BR de FFX-2 — comportamentos progressivos.
-   O site funciona inteiro sem JS; isto só melhora a experiência.
+   O site funciona sem JavaScript; este arquivo melhora a experiência.
    ============================================================ */
-
-/* Código PIX "copia e cola" (BR Code validado por scripts/gerar-pix.py).
-   String vazia = seção de doação fica no estado "em breve". */
-var PIX_PAYLOAD =
-  "00020126580014br.gov.bcb.pix0136cf09c78d-19a2-4598-a059-862cd326fb8a5204000053039865802BR5925Carlos Alexandre de Olive6006BRASIL62070503***6304202E";
 
 (function () {
   "use strict";
 
   var reduz = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  /* ---------- 1. Scroll-reveal ---------- */
   function iniciarReveals() {
     var alvos = document.querySelectorAll(".reveal");
     if (reduz || !("IntersectionObserver" in window)) {
@@ -22,113 +16,124 @@ var PIX_PAYLOAD =
       });
       return;
     }
+
     var obs = new IntersectionObserver(
       function (entradas) {
-        entradas.forEach(function (e) {
-          if (e.isIntersecting) {
-            e.target.classList.add("revelado");
-            obs.unobserve(e.target);
+        entradas.forEach(function (entrada) {
+          if (entrada.isIntersecting) {
+            entrada.target.classList.add("revelado");
+            obs.unobserve(entrada.target);
           }
         });
       },
       { threshold: 0.15, rootMargin: "0px 0px -8% 0px" }
     );
+
     alvos.forEach(function (el) {
       obs.observe(el);
     });
   }
 
-  /* ---------- 2. Tabs do tutorial ---------- */
   function iniciarTabs() {
     var tabs = Array.prototype.slice.call(document.querySelectorAll(".tab"));
     if (!tabs.length) return;
 
     function selecionar(tab) {
-      tabs.forEach(function (t) {
-        var ativo = t === tab;
-        t.setAttribute("aria-selected", ativo ? "true" : "false");
-        t.tabIndex = ativo ? 0 : -1;
-        var painel = document.getElementById(t.getAttribute("aria-controls"));
+      tabs.forEach(function (item) {
+        var ativo = item === tab;
+        item.setAttribute("aria-selected", ativo ? "true" : "false");
+        item.tabIndex = ativo ? 0 : -1;
+
+        var painel = document.getElementById(item.getAttribute("aria-controls"));
         if (painel) painel.hidden = !ativo;
       });
     }
 
-    tabs.forEach(function (tab, i) {
+    tabs.forEach(function (tab, indice) {
       tab.addEventListener("click", function () {
         selecionar(tab);
       });
-      tab.addEventListener("keydown", function (ev) {
-        var j = null;
-        if (ev.key === "ArrowRight") j = (i + 1) % tabs.length;
-        else if (ev.key === "ArrowLeft") j = (i - 1 + tabs.length) % tabs.length;
-        if (j !== null) {
-          ev.preventDefault();
-          tabs[j].focus();
-          selecionar(tabs[j]);
+
+      tab.addEventListener("keydown", function (evento) {
+        var proximo = null;
+        if (evento.key === "ArrowRight") {
+          proximo = (indice + 1) % tabs.length;
+        } else if (evento.key === "ArrowLeft") {
+          proximo = (indice - 1 + tabs.length) % tabs.length;
+        }
+
+        if (proximo !== null) {
+          evento.preventDefault();
+          tabs[proximo].focus();
+          selecionar(tabs[proximo]);
         }
       });
     });
   }
 
-  /* ---------- 3. Botões copiar ---------- */
   function copiarTexto(texto) {
     if (navigator.clipboard && navigator.clipboard.writeText) {
       return navigator.clipboard.writeText(texto);
     }
+
     return new Promise(function (resolve, reject) {
       try {
-        var ta = document.createElement("textarea");
-        ta.value = texto;
-        ta.style.position = "fixed";
-        ta.style.left = "-9999px";
-        document.body.appendChild(ta);
-        ta.select();
+        var textarea = document.createElement("textarea");
+        textarea.value = texto;
+        textarea.style.position = "fixed";
+        textarea.style.left = "-9999px";
+        document.body.appendChild(textarea);
+        textarea.select();
         document.execCommand("copy");
-        document.body.removeChild(ta);
+        document.body.removeChild(textarea);
         resolve();
-      } catch (e) {
-        reject(e);
+      } catch (erro) {
+        reject(erro);
       }
     });
   }
 
-  function feedbackBotao(btn, ok) {
-    var original = btn.dataset.original || btn.textContent;
-    btn.dataset.original = original;
-    btn.textContent = ok ? "Copiado!" : "Tente de novo";
-    setTimeout(function () {
-      btn.textContent = btn.dataset.original;
+  function feedbackBotao(botao, sucesso) {
+    var original = botao.dataset.original || botao.textContent;
+    botao.dataset.original = original;
+    botao.textContent = sucesso ? "Copiado!" : "Tente de novo";
+
+    window.setTimeout(function () {
+      botao.textContent = botao.dataset.original;
     }, 2000);
   }
 
   function iniciarCopiarMono() {
-    document.querySelectorAll(".bloco-mono .copiar").forEach(function (btn) {
-      btn.addEventListener("click", function () {
-        var span = btn.parentElement.querySelector("span");
+    document.querySelectorAll(".bloco-mono .copiar").forEach(function (botao) {
+      botao.addEventListener("click", function () {
+        var span = botao.parentElement.querySelector("span");
         var texto = span ? span.textContent : "";
+
         copiarTexto(texto).then(
           function () {
-            feedbackBotao(btn, true);
+            feedbackBotao(botao, true);
           },
           function () {
-            feedbackBotao(btn, false);
+            feedbackBotao(botao, false);
           }
         );
       });
     });
   }
 
-  /* ---------- 4. Nav esconde ao rolar para baixo ---------- */
   function iniciarNav() {
     var topo = document.getElementById("topo");
     if (!topo) return;
+
     var ultimo = window.pageYOffset;
     var travado = false;
+
     window.addEventListener(
       "scroll",
       function () {
         if (travado) return;
         travado = true;
+
         window.requestAnimationFrame(function () {
           var atual = window.pageYOffset;
           var descendo = atual > ultimo && atual > 120;
@@ -141,38 +146,42 @@ var PIX_PAYLOAD =
     );
   }
 
-  /* ---------- 5. giscus preguiçoso ---------- */
   function iniciarGiscus() {
     var alvo = document.getElementById("giscus");
     if (!alvo) return;
+
     var carregado = false;
+
     function carregar() {
       if (carregado) return;
       carregado = true;
-      var s = document.createElement("script");
-      s.src = "https://giscus.app/client.js";
-      s.setAttribute("data-repo", "ManoXande/FFX-2-Traducao-PT-BR");
-      s.setAttribute("data-repo-id", "R_kgDOTXIOKA");
-      s.setAttribute("data-category", "General");
-      s.setAttribute("data-category-id", "DIC_kwDOTXIOKM4DBHB2");
-      s.setAttribute("data-mapping", "pathname");
-      s.setAttribute("data-strict", "0");
-      s.setAttribute("data-reactions-enabled", "1");
-      s.setAttribute("data-emit-metadata", "0");
-      s.setAttribute("data-input-position", "top");
-      s.setAttribute(
+
+      var script = document.createElement("script");
+      script.src = "https://giscus.app/client.js";
+      script.setAttribute("data-repo", "ManoXande/FFX-2-Traducao-PT-BR");
+      script.setAttribute("data-repo-id", "R_kgDOTXIOKA");
+      script.setAttribute("data-category", "General");
+      script.setAttribute("data-category-id", "DIC_kwDOTXIOKM4DBHB2");
+      script.setAttribute("data-mapping", "pathname");
+      script.setAttribute("data-strict", "0");
+      script.setAttribute("data-reactions-enabled", "1");
+      script.setAttribute("data-emit-metadata", "0");
+      script.setAttribute("data-input-position", "top");
+      script.setAttribute(
         "data-theme",
         "https://manoxande.github.io/FFX-2-Traducao-PT-BR/assets/css/giscus.css"
       );
-      s.setAttribute("data-lang", "pt");
-      s.crossOrigin = "anonymous";
-      s.async = true;
-      alvo.appendChild(s);
+      script.setAttribute("data-lang", "pt");
+      script.crossOrigin = "anonymous";
+      script.async = true;
+      alvo.appendChild(script);
     }
+
     if (!("IntersectionObserver" in window)) {
       carregar();
       return;
     }
+
     var obs = new IntersectionObserver(
       function (entradas) {
         if (entradas[0].isIntersecting) {
@@ -182,73 +191,35 @@ var PIX_PAYLOAD =
       },
       { rootMargin: "300px" }
     );
+
     obs.observe(alvo);
   }
 
-  /* ---------- 6. Estado de sucesso do formulário ---------- */
-  function iniciarFormSucesso() {
-    if (window.location.search.indexOf("enviado=1") === -1) return;
-    var form = document.getElementById("form-contato");
-    var sucesso = document.getElementById("form-sucesso");
-    if (form && sucesso) {
-      form.hidden = true;
-      sucesso.hidden = false;
-    }
-  }
-
-  /* ---------- 7. Seção PIX ---------- */
-  function iniciarPix() {
-    var pendente = document.getElementById("pix-pendente");
-    var ativo = document.getElementById("pix-ativo");
-    if (!pendente || !ativo) return;
-
-    var chave = (PIX_PAYLOAD || "").trim();
-    if (chave.length > 0) {
-      var code = document.getElementById("pix-copia-texto");
-      if (code) code.textContent = chave;
-      ativo.hidden = false;
-      pendente.hidden = true;
-
-      var btn = document.getElementById("pix-copiar");
-      if (btn) {
-        btn.addEventListener("click", function () {
-          copiarTexto(chave).then(
-            function () {
-              feedbackBotao(btn, true);
-            },
-            function () {
-              feedbackBotao(btn, false);
-            }
-          );
-        });
-      }
-    } else {
-      pendente.hidden = false;
-      ativo.hidden = true;
-    }
-  }
-
-  /* ---------- 8. Pyreflies do hero ---------- */
   function iniciarPyreflies() {
     if (reduz) return;
+
     var camada = document.getElementById("pyreflies");
     if (!camada) return;
+
     var total = 18;
-    for (var i = 0; i < total; i++) {
-      var p = document.createElement("span");
-      p.className = "pyrefly";
-      p.style.left = (Math.random() * 100).toFixed(2) + "%";
-      p.style.top = (55 + Math.random() * 45).toFixed(2) + "%";
-      p.style.setProperty("--dur", (10 + Math.random() * 10).toFixed(1) + "s");
-      p.style.setProperty("--atraso", (Math.random() * 12).toFixed(1) + "s");
-      var esc = 0.6 + Math.random() * 0.9;
-      p.style.width = (5 * esc).toFixed(1) + "px";
-      p.style.height = p.style.width;
+    for (var i = 0; i < total; i += 1) {
+      var particula = document.createElement("span");
+      particula.className = "pyrefly";
+      particula.style.left = (Math.random() * 100).toFixed(2) + "%";
+      particula.style.top = (55 + Math.random() * 45).toFixed(2) + "%";
+      particula.style.setProperty("--dur", (10 + Math.random() * 10).toFixed(1) + "s");
+      particula.style.setProperty("--atraso", (Math.random() * 12).toFixed(1) + "s");
+
+      var escala = 0.6 + Math.random() * 0.9;
+      particula.style.width = (5 * escala).toFixed(1) + "px";
+      particula.style.height = particula.style.width;
+
       if (i % 3 === 0) {
-        p.style.background = "oklch(0.80 0.10 195)";
-        p.style.boxShadow = "0 0 8px 2px oklch(0.80 0.10 195 / 0.7)";
+        particula.style.background = "oklch(0.80 0.10 195)";
+        particula.style.boxShadow = "0 0 8px 2px oklch(0.80 0.10 195 / 0.7)";
       }
-      camada.appendChild(p);
+
+      camada.appendChild(particula);
     }
   }
 
@@ -258,8 +229,6 @@ var PIX_PAYLOAD =
     iniciarCopiarMono();
     iniciarNav();
     iniciarGiscus();
-    iniciarFormSucesso();
-    iniciarPix();
     iniciarPyreflies();
   }
 
