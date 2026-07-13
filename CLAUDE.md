@@ -1,86 +1,67 @@
 # CLAUDE.md
 
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+Este arquivo orienta agentes e ferramentas que trabalhem neste repositório.
 
-## What this repository is
+## Escopo do repositório
 
-This is **not a software project with a build pipeline** — it is the packaged, ready-to-install
-distribution of an unofficial PT-BR (Brazilian Portuguese) fan translation of **FINAL FANTASY X-2
-HD Remaster** (Steam version). There is no source-to-build step here: the files under
-`arquivos-do-jogo/` are the final artifacts a user copies directly into their game installation.
-There are no build/lint/test commands because there is nothing to compile or execute in this repo.
+O repositório contém:
 
-Read `LEIA-ME.txt` first — it is the actual user-facing README (in Portuguese) and is the
-authoritative source for install/uninstall steps, what is/isn't translated, and troubleshooting.
-Don't duplicate or contradict it; update it when install behavior changes.
+- o site público em `docs/`;
+- o código-fonte do instalador em `instalador/`;
+- scripts e documentação próprios;
+- uma área local de empacotamento em `arquivos-do-jogo/`.
 
-## Why this works technically
+O objetivo de distribuição é manter no histórico público apenas código e documentação próprios. Binários de terceiros e conteúdos derivados do jogo devem ser preparados fora do histórico Git e anexados somente à Release final quando houver base para redistribuição.
 
-FFX-2 HD Remaster has an integrity check on `FFX2_Data.vbf`: editing that archive directly makes
-the launcher refuse to start ("Broken game data"). This translation avoids that entirely by using
-a third-party file-loading mod instead of touching the protected archive:
+## Funcionamento técnico
 
-- **External File Loader** by ffgriever (Nexus Mods #150) — a `dinput8.dll` proxy hook
-  (`arquivos-do-jogo/dinput8.dll`, `hook.ini`, `simpleLog.dll`) that loads a small module,
-  `modules/ff10-file-loader.dll`, configured via `modules/config/ff10-file-loader.ini`.
-- That module redirects the game's file reads: any file under `data/mods/` (configured via the
-  `[Paths] mods=data/mods` key in `ff10-file-loader.ini`) is served instead of the equivalent file
-  inside the original VBF archive, with **no modification to any original game file**.
+O pacote usa o External File Loader de ffgriever, um loader de terceiros baseado em `dinput8.dll`. Ele permite carregar arquivos adicionais de `data/mods` sem substituir o arquivo original `FFX2_Data.vbf`.
 
-This means every file under `arquivos-do-jogo/` other than `data/mods/**` is third-party loader
-infrastructure (do not "fix" or restructure it — treat it as vendored/binary and change only when
-intentionally upgrading the loader itself), and everything under `data/mods/` is this project's
-actual translated content.
+Evite linguagem como "burlar", "quebrar", "bypass" ou "contornar proteção". Descreva o comportamento de forma técnica e neutra:
 
-## Layout of the translated content (`arquivos-do-jogo/data/mods/`)
+- carregamento de arquivos adicionais;
+- sobreposição de conteúdo por pasta separada;
+- preservação dos arquivos originais;
+- remoção reversível dos arquivos adicionados.
 
-Two mod roots correspond to the two data layers the Remaster is built from:
+## Regras de conteúdo
 
-- **`ffx-2_data/gamedata/ps3data/`** — Remaster-specific (PS3-derived) overlay assets:
-  - `lockit/ffx2_loc_kit_ps3_us.bin` — the localization kit: system/UI strings (autosave,
-    save/load, settings screens, etc.). Git shows this as a text diff, but it is an
-    **encoded/obfuscated binary format**, not plain editable text — don't hand-edit it expecting
-    normal text diffs to be meaningful.
-  - `menu_us/base_ftc/d3d11/*.dds.phyre` — Phyre-engine texture assets for the corrected font
-    (adds real ã/õ glyph support in dialogue; boot/config screens still fall back to ä/ö per
-    `LEIA-ME.txt`).
-- **`ffx_ps2/ffx2/master/new_uspc/`** — original PS2-engine game data files (reused as-is by the
-  Remaster), organized by subsystem:
-  - `battle/btl/<scene-id>/<scene-id>.bin` — ~600 per-battle-scene files (battle dialogue/popups).
-  - `battle/kernel/*.bin` — kernel tables: items, abilities, monsters, jobs, commands, menu/battle
-    text, etc. (binary structured data, not line-based text).
-  - `event/obj_ps3/<2-letter-location-code>/` — 47 folders (one per in-game location code) holding
-    ~530 event/dialogue `.bin` files in total.
-  - `lastmiss/kernel/lm_*.bin` — equivalent kernel tables for the "Last Mission" DLC.
+- Não adicionar ROMs, executáveis do jogo, músicas, vídeos ou arquivos originais completos.
+- Não apresentar o projeto como oficial, autorizado ou endossado.
+- Não adicionar PIX, Patreon, cobrança, venda ou acesso condicionado a pagamento.
+- Não aplicar a licença MIT a traduções, arquivos derivados do jogo ou componentes de terceiros.
+- Preservar `LICENSE`, `THIRD-PARTY-NOTICES.md` e os créditos.
+- Não publicar links de download até a Release existir e ter hashes SHA-256 conferidos.
 
-All `.bin` files in `data/mods/` are binary/encoded game data produced by translation tooling that
-lives **outside this repository** (not present here) — there is no script or pipeline in this repo
-to regenerate them from source strings. Treat them as opaque build artifacts: replace whole files
-when re-exporting updated translations rather than attempting in-place binary edits.
+## Site
 
-## Working in this repo
+A fonte principal é `docs/index.html`.
 
-- Changes are almost always: (a) editing `LEIA-ME.txt`, or (b) replacing one or more `.bin`/`.phyre`
-  files under `data/mods/` with newly exported versions from the external translation tooling.
-- Preserve the exact relative path structure under `data/mods/` — the loader matches game file
-  paths 1:1, so a translated file in the wrong subfolder silently fails to load (game shows English
-  for that file, no error).
-- Do not add files anywhere in `arquivos-do-jogo/` other than under `data/mods/` unless the intent
-  is specifically to change loader configuration/behavior (`hook.ini`,
-  `modules/config/ff10-file-loader.ini`) or upgrade the loader DLLs themselves.
-- Version/date the package by updating the "Versão do pacote" line at the end of `LEIA-ME.txt`.
+Antes de publicar:
 
-## Windows installer (Inno Setup 6)
+- conferir se não existem links 404;
+- conferir título, descrição, Open Graph e JSON-LD;
+- manter o aviso não oficial próximo ao primeiro CTA;
+- evitar promessas absolutas de segurança ou compatibilidade;
+- publicar capturas reais da tradução quando disponíveis;
+- não expor chaves, códigos PIX ou dados pessoais desnecessários.
 
-Windows users install via a compiled setup executable; Steam Deck / Linux (Proton) still
-follow the manual steps in `LEIA-ME.txt`.
+## Instalador
 
-- **`instalador/instalador.iss`** — Inno Setup 6 script (source of truth for game-folder
-  detection via Steam registry/libraries, file copy from `arquivos-do-jogo/`, and registered
-  Windows uninstall).
-- **`scripts/build-instalador.ps1`** — build command: `.\scripts\build-instalador.ps1`
-  (requires [Inno Setup 6](https://jrsoftware.org/isdl.php) installed). Output:
-  `instalador/saida/FFX2-Traducao-PTBR-Setup.exe`.
-- The generated `.exe` under `instalador/saida/` is **not** committed (`instalador/saida/` is in
-  `.gitignore`). When installer logic or packaged files change, rebuild and distribute the setup
-  separately from git.
+O código-fonte está em `instalador/instalador.iss`.
+
+O build depende de uma pasta local `arquivos-do-jogo/` preenchida com os componentes necessários. Esses artefatos não devem ser tratados como código licenciado pelo repositório.
+
+Ao preparar uma Release:
+
+1. revisar o conteúdo do pacote;
+2. compilar o instalador;
+3. gerar o ZIP manual;
+4. calcular SHA-256;
+5. registrar tamanhos, hashes e versões;
+6. analisar os arquivos antes da publicação;
+7. testar instalação e remoção em ambiente limpo.
+
+## Documentação
+
+`LEIA-ME.txt` é a referência para instalação, remoção, compatibilidade e avisos. Atualize-o sempre que o comportamento do pacote mudar.

@@ -1,2 +1,12 @@
+# Saídas de build
 instalador/saida/
 __pycache__/
+
+# Artefatos de distribuição: preparar localmente e publicar somente como
+# anexos de Release, sem incorporá-los ao histórico público.
+arquivos-do-jogo/data/mods/
+arquivos-do-jogo/modules/
+arquivos-do-jogo/*.dll
+*.zip
+*.exe
+*.sha256
