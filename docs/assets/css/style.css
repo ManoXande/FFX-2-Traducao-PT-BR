@@ -44,7 +44,7 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 5rem;
+  scroll-padding-top: 1rem;
   -webkit-text-size-adjust: 100%;
 }
 
@@ -222,76 +222,6 @@ code,
   padding: 1.1em 1.8em;
 }
 
-/* ---------- navegação ---------- */
-
-.topo {
-  position: fixed;
-  inset: 0 0 auto 0;
-  z-index: 50;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-  padding: 0.8rem var(--pad-x);
-  background: oklch(0.14 0.028 232 / 0.82);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid oklch(0.26 0.055 215 / 0.5);
-  transition: transform 0.4s var(--ease-out);
-}
-
-.topo[data-oculto="true"] {
-  transform: translateY(-104%);
-}
-
-.marca {
-  font-family: var(--f-display);
-  font-size: 1.2rem;
-  color: var(--espuma);
-  text-decoration: none;
-  white-space: nowrap;
-}
-
-.marca b {
-  color: var(--dourado);
-  font-weight: 400;
-}
-
-.menu {
-  display: flex;
-  gap: 0.3rem;
-  overflow-x: auto;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.menu::-webkit-scrollbar {
-  display: none;
-}
-
-.menu a {
-  display: block;
-  padding: 0.45rem 0.7rem;
-  border-radius: var(--raio-p);
-  color: var(--nevoa);
-  text-decoration: none;
-  font-size: 0.94rem;
-  white-space: nowrap;
-  transition: color 0.2s, background-color 0.2s;
-}
-
-.menu a:hover {
-  color: var(--espuma);
-  background: oklch(0.26 0.055 215 / 0.5);
-}
-
-.topo__baixar {
-  font-size: 0.92rem;
-  padding: 0.6em 1.3em;
-}
-
 /* ---------- hero ---------- */
 
 .hero {
@@ -299,7 +229,7 @@ code,
   min-height: 100svh;
   display: flex;
   align-items: center;
-  padding-top: 6rem;
+  padding-top: clamp(2rem, 5vw, 3.5rem);
   padding-bottom: clamp(2rem, 6vw, 5rem);
   overflow: hidden;
   background: radial-gradient(
@@ -453,7 +383,7 @@ code,
 @media (max-width: 860px) {
   .hero {
     min-height: auto;
-    padding-top: 5.5rem;
+    padding-top: 2.5rem;
     padding-bottom: 1.5rem;
   }
   .hero__grade {
@@ -1132,6 +1062,12 @@ code,
 .giscus {
   margin-top: 2rem;
   min-height: 180px;
+}
+
+.giscus__estado {
+  margin: 0;
+  color: var(--nevoa);
+  font-size: 0.94rem;
 }
 
 .fallback {

@@ -121,31 +121,6 @@
     });
   }
 
-  function iniciarNav() {
-    var topo = document.getElementById("topo");
-    if (!topo) return;
-
-    var ultimo = window.pageYOffset;
-    var travado = false;
-
-    window.addEventListener(
-      "scroll",
-      function () {
-        if (travado) return;
-        travado = true;
-
-        window.requestAnimationFrame(function () {
-          var atual = window.pageYOffset;
-          var descendo = atual > ultimo && atual > 120;
-          topo.setAttribute("data-oculto", descendo ? "true" : "false");
-          ultimo = atual;
-          travado = false;
-        });
-      },
-      { passive: true }
-    );
-  }
-
   function iniciarGiscus() {
     var alvo = document.getElementById("giscus");
     if (!alvo) return;
@@ -175,6 +150,45 @@
       script.crossOrigin = "anonymous";
       script.async = true;
       alvo.appendChild(script);
+
+      var encerrado = false;
+
+      function mostrarFallback() {
+        if (encerrado) return;
+        encerrado = true;
+        window.clearTimeout(timeoutId);
+        observer.disconnect();
+        window.removeEventListener("message", aoReceberMensagem);
+        alvo.innerHTML =
+          '<p class="giscus__estado">Não foi possível carregar os comentários agora. Use o link abaixo para conversar pelas Discussions do projeto.</p>';
+      }
+
+      // O giscus avisa erros (ex.: app não instalado no repositório) por postMessage.
+      function aoReceberMensagem(evento) {
+        if (evento.origin !== "https://giscus.app") return;
+        if (!evento.data || typeof evento.data !== "object") return;
+        var dados = evento.data.giscus;
+        if (dados && dados.error) mostrarFallback();
+      }
+
+      window.addEventListener("message", aoReceberMensagem);
+
+      var timeoutId = window.setTimeout(function () {
+        if (encerrado) return;
+        observer.disconnect();
+        if (!alvo.querySelector("iframe")) mostrarFallback();
+      }, 6000);
+
+      var observer = new MutationObserver(function () {
+        if (alvo.querySelector("iframe")) {
+          window.clearTimeout(timeoutId);
+          var estado = alvo.querySelector(".giscus__estado");
+          if (estado) estado.remove();
+          observer.disconnect();
+        }
+      });
+
+      observer.observe(alvo, { childList: true, subtree: true });
     }
 
     if (!("IntersectionObserver" in window)) {
@@ -227,7 +241,6 @@
     iniciarReveals();
     iniciarTabs();
     iniciarCopiarMono();
-    iniciarNav();
     iniciarGiscus();
     iniciarPyreflies();
   }
