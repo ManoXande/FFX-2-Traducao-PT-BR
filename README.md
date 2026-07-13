@@ -14,9 +14,9 @@
 
 ## Situação do lançamento
 
-A tradução 1.1 está em preparação para publicação oficial. Enquanto não houver uma Release publicada, **não existem links oficiais para o instalador ou para o pacote manual**.
+A versão 1.0 já está publicada, com instalador para Windows e pacote manual (ZIP). A versão 1.1, com correções em rótulos de telas de menu, está em preparação para uma próxima Release.
 
-Acompanhe somente a página de [Releases](https://github.com/ManoXande/FFX-2-Traducao-PT-BR/releases). O tamanho e o hash SHA-256 de cada arquivo serão informados na própria Release.
+Baixe somente pela página de [Releases](https://github.com/ManoXande/FFX-2-Traducao-PT-BR/releases) — o tamanho e o hash SHA-256 de cada arquivo são informados na própria Release.
 
 ## O que está traduzido
 
