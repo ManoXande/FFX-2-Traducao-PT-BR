@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://manoxande.github.io/FFX-2-Traducao-PT-BR/sitemap.xml
