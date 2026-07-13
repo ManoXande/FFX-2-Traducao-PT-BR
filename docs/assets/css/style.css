@@ -1088,21 +1088,6 @@ code,
   color: var(--dourado);
 }
 
-.pix-qr {
-  width: 232px;
-  height: 232px;
-  margin: 0 auto 1.4rem;
-  background: oklch(0.95 0.01 90);
-  border-radius: var(--raio-p);
-  padding: 12px;
-}
-
-.pix-qr img {
-  width: 100%;
-  height: 100%;
-  display: block;
-}
-
 .pix-copia {
   display: flex;
   gap: 0.5rem;
