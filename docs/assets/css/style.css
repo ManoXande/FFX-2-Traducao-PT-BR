@@ -451,26 +451,37 @@ code,
 }
 
 @media (max-width: 860px) {
+  .hero {
+    min-height: auto;
+    padding-top: 5.5rem;
+    padding-bottom: 1.5rem;
+  }
   .hero__grade {
     grid-template-columns: 1fr;
+    gap: 0;
   }
   .hero__arte {
-    min-height: 52vh;
-    margin-top: 1rem;
+    position: relative;
     order: 2;
+    min-height: 0;
+    align-self: auto;
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    overflow: hidden;
   }
-  .arte-yuna {
-    right: 50%;
-    transform: translateX(50%);
-    width: min(72%, 320px);
-  }
-  .arte-rikku {
-    right: 78%;
-    width: min(60%, 260px);
-  }
+  /* no mobile mostramos só a Yuna, inteira e contida (sem sangria/cortes) */
+  .arte-rikku,
   .arte-paine {
-    right: 4%;
-    width: min(46%, 200px);
+    display: none;
+  }
+  .hero__arte img.arte-yuna {
+    position: static;
+    right: auto;
+    bottom: auto;
+    width: min(62%, 240px);
+    filter: drop-shadow(0 14px 28px oklch(0.08 0.03 235 / 0.7));
   }
 }
 
