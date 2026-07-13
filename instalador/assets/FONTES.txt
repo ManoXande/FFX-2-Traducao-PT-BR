@@ -1,0 +1,43 @@
+Origem das imagens usadas no instalador (Inno Setup)
+======================================================
+
+Todas as imagens abaixo vieram da própria página oficial da Steam Store do
+jogo "FINAL FANTASY X/X-2 HD Remaster" (Square Enix), via API pública de
+detalhes de app da Steam. Nenhuma tem o logo oficial do jogo aplicado por
+cima (é só o screenshot puro, com o aviso de copyright padrão da Square Enix
+no canto, que não é logo).
+
+Screenshot original (arquivo mantido nesta pasta: ss6.jpg)
+------------------------------------------------------------
+URL exata:
+https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/359870/ss_6f022eb81a5591171831e8245980dda1a0e7ecf3.1920x1080.jpg
+
+Página da Steam de onde veio a lista de screenshots:
+https://store.steampowered.com/app/359870/ (API: https://store.steampowered.com/api/appdetails?appids=359870)
+
+Descrição: cena oficial de FFX-2 dentro da ponte de comando do Celsius,
+mostrando as três Gullwings — Rikku (esquerda), Yuna (centro) e Paine
+(direita). Resolução original 1920x1080. Crédito de rodapé no próprio
+screenshot: "©2001-2004, 2013-2015 SQUARE ENIX CO., LTD. All Rights
+Reserved. CHARACTER DESIGN: TETSUYA NOMURA".
+
+Arquivos gerados a partir do ss6.jpg (todos com Python + Pillow)
+------------------------------------------------------------------
+- wizard-imagem.bmp (328x628, BMP 24-bit)
+  Recorte retrato centralizado em Yuna, com os braços/mãos de Rikku e Paine
+  entrando pelas laterais (recorte vertical de x=678 a x=1242, altura cheia
+  0-1080, depois redimensionado para 328x628).
+
+- wizard-logo.bmp (110x116, BMP 24-bit)
+  Close no rosto da Yuna (recorte de x=789,y=140 a x=1111,y=480, depois
+  redimensionado para 110x116).
+
+- icone.ico (16, 32, 48 e 256 px)
+  Recorte quadrado centralizado no rosto da Yuna (340x340 em torno de
+  x=950,y=320), redimensionado para 256x256 e exportado em multi-resolução.
+
+Se quiser trocar por outra arte depois, basta substituir os três arquivos
+gerados (wizard-imagem.bmp, wizard-logo.bmp, icone.ico) mantendo os mesmos
+nomes e proporções (164:314, 55:58 e quadrado, respectivamente). O arquivo
+ss6.jpg foi deixado na pasta como referência/fonte bruta caso queira gerar
+novos recortes.

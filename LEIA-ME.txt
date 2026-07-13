@@ -37,6 +37,20 @@ FFX-1 da Central de Traduções):
 ================================================================
   INSTALAÇÃO — WINDOWS (PC)
 ================================================================
+1. Baixe e execute o instalador: FFX2-Traducao-PTBR-Setup.exe
+
+2. Siga as telas do assistente. O instalador encontra sozinho a pasta
+   do jogo na Steam. Se não encontrar, ele pede para você escolher
+   a pasta manualmente.
+
+3. Pronto. Abra o jogo normalmente pela Steam e escolha FFX-2.
+
+================================================================
+  INSTALAÇÃO MANUAL (alternativa — Windows)
+================================================================
+Para quem preferir instalar sem o instalador, ou se o instalador não
+estiver disponível no pacote que você baixou:
+
 1. Localize a pasta do jogo:
    Steam > clique com o botão direito em "FINAL FANTASY X/X-2 HD
    Remaster" > Gerenciar > Procurar arquivos locais.
@@ -58,13 +72,16 @@ FFX-1 da Central de Traduções):
 ================================================================
   INSTALAÇÃO — STEAM DECK / LINUX (Proton)
 ================================================================
+O instalador automático (FFX2-Traducao-PTBR-Setup.exe) é só para
+Windows — no Steam Deck e no Linux a instalação continua manual.
+
 1. No Modo Desktop, localize a pasta do jogo:
    ~/.local/share/Steam/steamapps/common/FINAL FANTASY FFX&FFX-2 HD Remaster
    (se o jogo estiver no cartão SD:
    /run/media/mmcblk0p1/steamapps/common/FINAL FANTASY FFX&FFX-2 HD Remaster)
 
 2. Copie TODO o CONTEÚDO da pasta "arquivos-do-jogo" para dentro da
-   pasta do jogo (mesma coisa do passo 2 do Windows).
+   pasta do jogo (mesma coisa do passo 2 da instalação manual).
 
 3. PASSO EXTRA (obrigatório no Proton): o Wine precisa ser autorizado
    a carregar a dinput8.dll do loader. Na Steam:
@@ -101,10 +118,17 @@ Se o jogo abrir em inglês:
 ================================================================
   DESINSTALAÇÃO
 ================================================================
-Apague (ou renomeie) na pasta do jogo:
-   dinput8.dll, simpleLog.dll, hook.ini, hook.log, a pasta modules\
-   e a pasta data\mods\
-No Steam Deck, remova também a opção de inicialização.
+Windows (se instalou pelo instalador):
+   Configurações > Aplicativos > Aplicativos instalados >
+   Tradução PT-BR - FINAL FANTASY X-2 HD Remaster > Desinstalar
+   (também funciona em Painel de Controle > Programas e Recursos)
+
+Instalação manual (alternativa — Windows e Steam Deck / Linux):
+   Apague (ou renomeie) na pasta do jogo:
+      dinput8.dll, simpleLog.dll, hook.ini, hook.log, a pasta modules\
+      e a pasta data\mods\
+   No Steam Deck, remova também a opção de inicialização.
+
 Nenhum arquivo original foi alterado, então isso restaura 100% o jogo.
 
 ================================================================
@@ -130,4 +154,4 @@ Nenhum arquivo original foi alterado, então isso restaura 100% o jogo.
 - Tradução distribuída gratuitamente. Não venda. O jogo original é
   necessário (compre na Steam).
 
-Versão do pacote: 1.0 (2026-07-12)
+Versão do pacote: 1.0 (2026-07-13) — inclui instalador automático para Windows
