@@ -1,4 +1,4 @@
-; Instalador da tradução PT-BR — FINAL FANTASY X-2 HD Remaster (Steam)
+﻿; Instalador da tradução PT-BR — FINAL FANTASY X-2 HD Remaster (Steam)
 ; Copia apenas arquivos da tradução para a pasta do jogo, sem alterar dados originais.
 
 #define MyAppName "Tradução PT-BR - FINAL FANTASY X-2 HD Remaster"
@@ -55,7 +55,7 @@ begin
     (Caminho <> '') and
     DirExists(Caminho) and
     FileExists(Caminho + '\FFX-2.exe') and
-    FileExists(Caminho + '\FFX2_Data.vbf');
+    FileExists(Caminho + '\data\FFX2_Data.vbf');
 end;
 
 function NormalizarCaminho(const Caminho: String): String;
@@ -371,7 +371,7 @@ begin
     begin
       MsgBox(
         'Não encontrei o FFX-2 nesta pasta.' + #13#10#13#10 +
-        'Confira se é a pasta certa: ela deve conter o arquivo FFX-2.exe.' + #13#10#13#10 +
+        'Confira se é a pasta certa: ela deve conter o arquivo FFX-2.exe e a pasta data (com FFX2_Data.vbf).' + #13#10#13#10 +
         'Dica: na Steam, clique com o botão direito no jogo > Gerenciar > Procurar arquivos locais.',
         mbError, MB_OK);
       Result := False;
