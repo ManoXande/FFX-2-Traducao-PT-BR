@@ -14,7 +14,7 @@
 
 ## Situação do lançamento
 
-A versão 1.0 já está publicada, com instalador para Windows e pacote manual (ZIP). A versão 1.1, com correções em rótulos de telas de menu, está em preparação para uma próxima Release.
+A versão 1.2 está publicada, com instalador para Windows e pacote manual (ZIP). Ela funciona com a atualização da Steam de 10/09/2026 e corrige o travamento no baú de Kilika e erros de texto em telas de menu.
 
 Baixe somente pela página de [Releases](https://github.com/ManoXande/FFX-2-Traducao-PT-BR/releases) — o tamanho e o hash SHA-256 de cada arquivo são informados na própria Release.
 

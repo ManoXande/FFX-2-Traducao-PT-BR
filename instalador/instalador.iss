@@ -2,7 +2,7 @@
 ; Copia apenas arquivos da tradução para a pasta do jogo, sem alterar dados originais.
 
 #define MyAppName "Tradução PT-BR - FINAL FANTASY X-2 HD Remaster"
-#define MyAppVersion "1.0"
+#define MyAppVersion "1.2"
 #define MyAppPublisher "Carlos Alexandre de Oliveira"
 #define NomePastaJogo "FINAL FANTASY FFX&FFX-2 HD Remaster"
 #define SteamAppId "359870"

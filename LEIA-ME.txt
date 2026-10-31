@@ -210,6 +210,10 @@ integridade dos arquivos" da Steam.
 Distribuição gratuita. Não venda, não cobre acesso e não condicione o
 download a pagamentos ou doações.
 
-Versão do pacote: 1.1 (pré-lançamento revisado em 2026-07-13)
-Correções desta versão: rótulo "Audio" ajustado para evitar corte do glifo
-acentuado e rótulo "Vsync" corrigido nas opções de vídeo.
+Versão do pacote: 1.2 (2026-10-31)
+Correções desta versão: compatibilidade com a atualização da Steam de
+10/09/2026 (o jogo voltava a abrir em inglês); instalador volta a
+reconhecer a pasta do jogo (FFX2_Data.vbf fica em data\); corrigidos
+"Message error!" em algumas falas e o travamento ao abrir o baú da casa
+da Dona, em Kilika.
+Versão 1.1: rótulos "Audio" e "Vsync" nas opções de vídeo.
