@@ -201,7 +201,7 @@
             <p>Se o Windows mostrar um aviso por o instalador ainda não possuir assinatura digital, confirme primeiro que o arquivo e o hash correspondem à Release oficial.</p>
           </li>
           <li>
-            <p>Siga o assistente. Ele tenta localizar a pasta do jogo na Steam; se não encontrar, selecione-a manualmente.</p>
+            <p>Siga o assistente. Ele tenta localizar a pasta do jogo na Steam. A pasta pedida é a do jogo (onde está o <span class="mono">FFX-2.exe</span>), não uma pasta nova em Program Files. Se o Windows pedir administrador, aceite — a Steam costuma estar em Program Files.</p>
           </li>
           <li>
             <p>Abra o jogo pela Steam e escolha FFX-2.</p>
@@ -265,8 +265,12 @@
           <p>Verifique a integridade dos arquivos pela Steam e refaça a instalação usando apenas o pacote oficial. Não substitua manualmente o arquivo <span class="mono">FFX2_Data.vbf</span>.</p>
         </details>
         <details>
+          <summary>O instalador não encontrou o jogo. E agora?</summary>
+          <p>A pasta pedida é a do FFX-2, não um destino novo. Na Steam, clique com o botão direito em FINAL FANTASY X/X-2 HD Remaster, depois Gerenciar e Procurar arquivos locais — aponte o assistente para essa pasta (ela contém <span class="mono">FFX-2.exe</span>). Se o Windows bloquear o .exe, use Mais informações → Executar assim mesmo, ou instale pelo ZIP.</p>
+        </details>
+        <details>
           <summary>O jogo abriu em inglês. E agora?</summary>
-          <p>No Windows, confira se <span class="mono">dinput8.dll</span> está na mesma pasta do <span class="mono">FFX-2.exe</span>. No Steam Deck, confira o <span class="mono">WINEDLLOVERRIDES</span> e a existência de <span class="mono">data/mods/ffx-2_data</span>.</p>
+          <p>No Windows, confira se <span class="mono">dinput8.dll</span> está na mesma pasta do <span class="mono">FFX-2.exe</span> e se o antivírus não o enviou para a quarentena. O instalador precisa apontar para a pasta do jogo, não para uma pasta nova. No Steam Deck, confira o <span class="mono">WINEDLLOVERRIDES</span> e a existência de <span class="mono">data/mods/ffx-2_data</span>. Se o assistente falhar, use a instalação manual pelo ZIP.</p>
         </details>
         <details>
           <summary>Afeta meus saves ou o FFX-1?</summary>

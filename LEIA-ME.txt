@@ -73,6 +73,33 @@ confirmar que o arquivo veio da Release oficial e que o hash corresponde.
 
 4. Abra o jogo normalmente pela Steam e escolha FFX-2.
 
+Se o assistente disser que não encontrou o FFX-2:
+- A pasta pedida é a do JOGO, não uma pasta nova. Ela deve conter
+  FFX-2.exe e a pasta data (com FFX2_Data.vbf).
+- Use Steam > botão direito no jogo > Gerenciar > Procurar arquivos locais
+  e aponte o instalador para essa pasta.
+- Caminho típico:
+  C:\Program Files (x86)\Steam\steamapps\common\
+  FINAL FANTASY FFX&FFX-2 HD Remaster
+
+Se o Windows bloquear o .exe (SmartScreen):
+- Confira o hash SHA-256 da Release.
+- Em "O Windows protegeu o seu PC", clique em Mais informações e
+  depois em Executar assim mesmo.
+- O instalador ainda não tem assinatura digital; isso é esperado.
+
+Se o instalador pedir administrador, aceite. A pasta padrão da Steam
+fica em Program Files e a cópia de dinput8.dll precisa dessa permissão.
+
+Se a instalação terminar e o jogo continuar em inglês:
+- Confira se dinput8.dll está na mesma pasta do FFX-2.exe.
+- Abra o Windows Defender e veja se dinput8.dll foi para a quarentena.
+- Feche o jogo, reinstale, e abra de novo pela Steam.
+
+Como alternativa ao instalador, use o pacote ZIP (instalação manual)
+ou, se estiver com o repositório clonado, o script
+scripts\instalar-windows.ps1.
+
 ================================================================
   INSTALAÇÃO MANUAL — WINDOWS
 ================================================================
